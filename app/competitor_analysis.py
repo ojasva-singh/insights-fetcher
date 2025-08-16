@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse
 import time
 
-# Load environment variables to get the TAVILY_API_KEY
+
 load_dotenv()
 
 # Initialize the Tavily client
@@ -14,7 +14,7 @@ except Exception as e:
     print(f"Error initializing Tavily client: {e}. Competitor search will be skipped.")
     tavily_client = None
 
-def find_competitors(brand_name: str, brand_context: str = "", product_types: list = None) -> list[str]:
+def find_competitors(brand_name: str, product_types: list = None) -> list[str]:
     """
     Finds competitors by performing a web search with Tavily and filtering results.
     """

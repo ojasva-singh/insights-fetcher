@@ -68,20 +68,20 @@ async def fetch_insights(request: models.FetchRequest):
             product_types = [pt for pt in product_types if pt]  # Remove empty strings
         
         # Find competitors
-        competitors = competitor_analysis.find_competitors(brand_name, brand_context, product_types)
+        competitors = competitor_analysis.find_competitors(brand_name, product_types)
 
-        # 5. Assemble the final Pydantic object
+        # 5. Assemble the final object
         insights = models.BrandInsights(
             brand_name=brand_name,
             product_catalog=product_catalog,
-            hero_products=hero_products,  # Now populated
+            hero_products=hero_products,
             policies=policies,
             faqs=faqs,
             social_handles=social_handles,
             contact_details=contact_details,
             brand_context=brand_context,
             important_links=important_links,
-            competitors=competitors  # Now populated
+            competitors=competitors
         )
         
         return insights

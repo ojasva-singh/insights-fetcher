@@ -1,8 +1,6 @@
 from pydantic import BaseModel, HttpUrl
 from typing import List, Optional, Dict
 
-# Pydantic models define the structure of your API data (requests and responses)
-
 class Product(BaseModel):
     id: int
     title: str
@@ -21,14 +19,14 @@ class FAQItem(BaseModel):
 class BrandInsights(BaseModel):
     brand_name: Optional[str] = None
     product_catalog: List[Product] = []
-    hero_products: List[HttpUrl] = [] # ADDED: Products on the homepage
+    hero_products: List[HttpUrl] = [] 
     policies: Dict[str, str] = {}
     faqs: List[FAQItem] = []
     social_handles: Dict[str, HttpUrl] = {}
     contact_details: Dict[str, List[str]] = {}
     brand_context: Optional[str] = None
     important_links: Dict[str, HttpUrl] = {}
-    competitors: List[str] = [] # ADDED: List of competitor domains
+    competitors: List[str] = [] 
 
 class FetchRequest(BaseModel):
     website_url: HttpUrl
