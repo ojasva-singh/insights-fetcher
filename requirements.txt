@@ -1,0 +1,9 @@
+fastapi
+requests
+beautifulsoup4
+google-generativeai
+python-dotenv
+SQLAlchemy
+PyMySQL
+uvicorn
+tavily-python
